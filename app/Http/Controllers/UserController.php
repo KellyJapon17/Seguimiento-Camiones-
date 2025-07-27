@@ -23,7 +23,7 @@ class UserController extends Controller
             })
             ->paginate(request('nro_index'));
     }
-
+    
     /**
      * Store a newly created resource in storage.
      */
