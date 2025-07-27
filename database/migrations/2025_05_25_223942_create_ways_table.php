@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('ways', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('user_id');
+            $table->foreignId('user_id')->nullable();
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users');
             $table->string('status');
-            $table->string('init');
-            $table->string('finish');
+            $table->string('init')->nullable();
+            $table->string('finish')->nullable();
             $table->timestamps();
         });
     }
