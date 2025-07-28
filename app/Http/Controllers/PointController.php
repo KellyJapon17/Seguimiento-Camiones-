@@ -18,8 +18,8 @@ class PointController extends Controller
             ->when(request()->filled('status'),function($query){
                 $query->where('status',request('status'));
             })
-            ->paginate(10);
-        
+            ->paginate(100);
+
         return response()->json($points,200);
     }
 
@@ -55,7 +55,7 @@ class PointController extends Controller
     public function destroy(Point $id)
     {
         $id->delete();
-        
+
         return response()->json([
             "message"=>"Punto eliminado."
         ],200);

@@ -18,8 +18,8 @@ class WayController extends Controller
             ->when(request()->filled('status'),function($query){
                 $query->where('status',request('status'));
             })
-            ->paginate(10);
-        
+            ->paginate(100);
+
         return response()->json($ways,200);
     }
 
